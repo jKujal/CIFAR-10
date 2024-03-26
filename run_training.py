@@ -1,12 +1,13 @@
-import sys
-import gc
+#Gonna comment on functionalities for myself. Will make pretty later.
+import sys #Access to system params. and functions.
+import gc #Garbage collector, freeing memory that would otherwise not be freed?
 
-from termcolor import colored
+from termcolor import colored #Output text colors for terminal
 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt #Graphs
 
 import torch
-from torch.optim.lr_scheduler import MultiStepLR
+from torch.optim.lr_scheduler import MultiStepLR #Alter learning rate, when epoch reaches goal
 
 from imageclassification.kvs import GlobalKVS
 from imageclassification.training import utilities
@@ -14,7 +15,7 @@ from imageclassification.training import session
 from imageclassification.training import dataset as ds
 import imageclassification.training.metrics as metrics
 
-import cv2
+import cv2 #Open Computer Vision Library
 cv2.ocl.setUseOpenCL(False)
 cv2.setNumThreads(0)
 
