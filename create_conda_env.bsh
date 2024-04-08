@@ -4,11 +4,11 @@ conda update -n base -c defaults conda
 conda create -y -n py36_env python=3.6
 source activate py36_env
 conda install -y -n py36_env numpy opencv scipy pyyaml matplotlib scikit-learn
-conda install -y -n py36_env pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+conda install -y -n py36_env pytorch==2.2.1 torchvision==0.17.1 cudatoolkit=11.8 -c pytorch
 conda install -c anaconda pillow=6.1
 conda install -c conda-forge tensorboardx=1.4
 conda install -c conda-forge pandas
-conda install -c conda-forge tqdm # pip install tqdm
-conda install -c conda-forge termcolor # pip install termcolor
+conda install -c conda-forge tqdm
+conda install -c conda-forge termcolor
 pip install pip -U
-pip install solt==0.1.2 #sit kun opencv asennettu niin päivitä solt.
+pip install solt==0.1.9
