@@ -11,5 +11,4 @@ conda install -c conda-forge pandas
 conda install -c conda-forge tqdm # pip install tqdm
 conda install -c conda-forge termcolor # pip install termcolor
 pip install pip -U
-#pip install opencv-python
 pip install solt==0.1.2 #sit kun opencv asennettu niin päivitä solt.
