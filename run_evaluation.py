@@ -125,8 +125,8 @@ if __name__ == "__main__":
     eval_trf = tv_transforms.Compose([
         img_labels2solt,
         slc.Stream([
-            slt.PadTransform(pad_to=(PAD_TO, PAD_TO)),
-            slt.CropTransform(crop_size=(CROP_SIZE, CROP_SIZE), crop_mode='c'),  # center crop
+            slt.Pad(pad_to=(PAD_TO, PAD_TO)),
+            slt.Crop(crop_to=(CROP_SIZE, CROP_SIZE), crop_mode='c'),  # center crop
         ]),
         unpack_solt_data,
         partial(apply_by_index, transform=tv_transforms.ToTensor(), idx=0),

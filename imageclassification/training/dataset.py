@@ -13,7 +13,8 @@ import numpy as np
 
 import pandas as pd
 
-import solt.data as sld
+import solt.transforms as slt
+import solt.core as slc
 
 import cv2
 cv2.ocl.setUseOpenCL(False)
@@ -141,11 +142,14 @@ def init_metadata():
 
 
 def img_labels2solt(inp):
+    '''
+    Returns
+    '''
     label, img = inp
-    return sld.DataContainer((img, label), fmt='IL')
+    return slc.DataContainer((img, label), fmt='IL')
 
 
-def unpack_solt_data(dc: sld.DataContainer):
+def unpack_solt_data(dc: slc.DataContainer):
     return dc.data
 
 

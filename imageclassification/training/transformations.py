@@ -58,9 +58,9 @@ def init_train_augs(crop_mode='r', pad_mode='r'):
     trf = transforms.Compose([
         img_labels2solt,
         slc.Stream([
-            slt.PadTransform(pad_to=(PAD_TO, PAD_TO)),
-            slt.RandomFlip(p=0.5, axis=1),  # horizontal flip
-            slt.CropTransform(crop_size=(CROP_SIZE, CROP_SIZE), crop_mode=crop_mode),
+            slt.Pad(pad_to=(PAD_TO, PAD_TO)),
+            slt.Flip(axis=1),  # horizontal flip
+            slt.Crop(crop_to=(CROP_SIZE, CROP_SIZE), crop_mode=crop_mode),
         ], padding=pad_mode),
         unpack_solt_data,
         partial(apply_by_index, transform=transforms.ToTensor(), idx=0),
